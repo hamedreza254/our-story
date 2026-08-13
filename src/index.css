@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ═══════ Custom Properties ═══════ */
+:root {
+  --bg-deep: #060612;
+  --bg-card: rgba(255, 255, 255, 0.025);
+  --accent-pink: #d4a0b9;
+  --accent-purple: #a78bfa;
+  --accent-gold: #e8d5a8;
+  --text-primary: #ede6f2;
+  --text-muted: #9b8fb0;
+  --font-main: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+}
+
+/* ═══════ Reset & Base ═══════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  direction: rtl;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root { min-height: 100vh; }
+
+/* ═══════ Scrollbar ═══════ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(167,139,250,0.2); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(167,139,250,0.35); }
+
+/* ═══════ Selection ═══════ */
+::selection {
+  background: rgba(212,160,185,0.25);
+  color: #fff;
+}
+
+/* ═══════ Gradient Text ═══════ */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-subtle {
+  background: linear-gradient(135deg, rgba(212,160,185,0.85), rgba(167,139,250,0.85));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════ Glass ═══════ */
+.glass {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ═══════ Decorative Divider ═══════ */
+.line-fade {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.25), transparent);
+}
+
+.line-fade-pink {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,160,185,0.3), transparent);
+}
+
+/* ═══════ Range Input ═══════ */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  outline: none;
+  direction: ltr;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  background: var(--accent-pink);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(212,160,185,0.35);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px; height: 12px;
+  background: var(--accent-pink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 8px rgba(212,160,185,0.35);
+}
+
+/* ═══════ prefers-reduced-motion ═══════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
